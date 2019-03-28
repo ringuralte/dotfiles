@@ -1,0 +1,7 @@
+pane	code-0	0	:weechat	0	:	0	:/home/ringu	1	weechat	:weechat
+pane	code-0	1	:bash	0	:-	0	:/etc/lightdm	1	bash	:
+pane	code-0	2	:bash	1	:*	0	:/home/ringu	1	bash	:
+window	code-0	0	0	:	c35d,211x46,0,0,0
+window	code-0	1	0	:-	c35e,211x46,0,0,1
+window	code-0	2	1	:*	c35f,211x46,0,0,2
+state	code-0	

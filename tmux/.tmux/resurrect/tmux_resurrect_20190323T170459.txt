@@ -1,0 +1,5 @@
+pane	code-0	0	:ping	0	:-	0	:/home/ringu	1	ping	:ping sgp.valve.net
+pane	code-0	1	:bash	1	:*	0	:/home/ringu/.tmux/plugins	1	bash	:
+window	code-0	0	0	:-	c35d,211x46,0,0,0
+window	code-0	1	1	:*	c35e,211x46,0,0,1
+state	code-0	

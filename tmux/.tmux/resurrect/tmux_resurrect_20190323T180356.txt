@@ -1,0 +1,13 @@
+pane	code-0	0	:htop	0	:	0	:/home/ringu	0	ping	:ping sgp.valve.net
+pane	code-0	0	:htop	0	:	1	:/home/ringu	0	ncmpcpp	:ncmpcpp
+pane	code-0	0	:htop	0	:	2	:/home/ringu	1	htop	:htop
+pane	code-0	1	:weechat	0	:	0	:/home/ringu	1	weechat	:weechat
+pane	code-0	2	:vim	1	:*	0	:/home/ringu/sites/sunhlukawn	1	vim	:vim
+pane	code-0	3	:npm	0	:-	0	:/home/ringu/sites/sunhlukawn	1	npm	:npm
+pane	code-0	4	:vim	0	:	0	:/home/ringu/exercises/React-For-Beginners-Starter-Files-master	1	vim	:vim
+window	code-0	0	0	:	5667,211x46,0,0{105x46,0,0[105x23,0,0,0,105x22,0,24,4],105x46,106,0,3}
+window	code-0	1	0	:	c35e,211x46,0,0,1
+window	code-0	2	1	:*	c35f,211x46,0,0,2
+window	code-0	3	0	:-	c362,211x46,0,0,5
+window	code-0	4	0	:	c363,211x46,0,0,6
+state	code-0	

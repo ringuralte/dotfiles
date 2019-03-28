@@ -1,0 +1,15 @@
+pane	0	0	:bash	1	:*	0	:/home/ringu	1	bash	:
+pane	code-0	0	:weechat	0	:	0	:/home/ringu	1	weechat	:weechat
+pane	code-0	1	:bash	0	:	0	:/home/ringu	0	htop	:htop
+pane	code-0	1	:bash	0	:	1	:/home/ringu	0	ncmpcpp	:ncmpcpp
+pane	code-0	1	:bash	0	:	2	:/home/ringu/exercises/React-For-Beginners-Starter-Files-master/catch-of-the-day	0	bash	:
+pane	code-0	1	:bash	0	:	3	:/home/ringu/sites/sunhlukawn	1	npm	:npm
+pane	code-0	1	:bash	0	:	4	:/home/ringu	0	htop	:htop
+pane	code-0	2	:bash	0	:-	0	:/home/ringu/sites/sunhlukawn	1	bash	:
+pane	code-0	3	:bash	1	:*	0	:/home/ringu/exercises/React-For-Beginners-Starter-Files-master/catch-of-the-day	1	bash	:
+window	0	0	1	:*	c35e,211x46,0,0,1
+window	code-0	0	0	:	cc5f,213x48,0,0,2
+window	code-0	1	0	:	5043,213x48,0,0{106x48,0,0[106x24,0,0,3,106x23,0,25,4],106x48,107,0[106x24,107,0{53x24,107,0,5,52x24,161,0,11},106x23,107,25,6]}
+window	code-0	2	0	:-	cc64,213x48,0,0,7
+window	code-0	3	1	:*	cc66,213x48,0,0,9
+state	code-0	0
