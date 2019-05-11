@@ -3,18 +3,17 @@ call plug#begin()
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'fugitive.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/denite.nvim'
 Plug 'Yggdroot/indentLine'
-Plug 'neoclide/coc.nvim',{'tag':'*','do':{->coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
@@ -95,7 +94,7 @@ endif " has("autocmd")
 
 
 let g:lightline = {
-  \   'colorscheme': 'one',
+  \   'colorscheme': 'molokai',
   \   'active': {
   \     'left':[[ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly'],
@@ -115,27 +114,25 @@ let g:lightline.subseparator = {
   \}
 
 let g:lightline.tabline = {
-    \ 'left': [['tabs','filename',]],
-    \ 'right': [['close']]
+    \ 'left': [['tabs']],
+    \ 'right': [['filename','close']]
     \}
-
-"NerdTree visuals"
-let g:WebDevIconsUnicodeDecorateFolderNodes=1
-let g:WebDevIconsNerdTreeAfterGlyphPadding=' '
-let g:NERDTreeDirArrowExpandable='+'
-let g:NERDTreeDirArrowCollapsible='-'
 
 "emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
 
-"nerdtree is ctrl+n 
-map <C-N> :NERDTreeToggle<CR>
+" make emmet behave well with jsx in js and ts files
+let g:user_emmet_settings = {
+    \ 'javascript' : {
+    \   'extends' : 'jsx',
+    \ },
+    \ 'typescript'  : {
+    \   'extends' : 'tsx',
+    \},
+  \}
 
-"remapping hjkl to jkl;
-noremap ; l
-noremap l k
-noremap k j
-noremap j h
+"escape with jk
+inoremap jj <Esc>
 
 "split management
 nmap <C-H> <C-W><C-H>
@@ -149,5 +146,28 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
+"remove ex mode when accidentally pressing capital Q
+nnoremap Q <nop>
+
+" remap envoke key
+nnoremap <C-p> :Files<Cr>
+
 "type :Prettier to use the coc-prettier extension
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+"no arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+
+"remove hjkl for now
+noremap h <NOP>
+noremap j <NOP>
+noremap k <NOP>
+noremap l <NOP>
