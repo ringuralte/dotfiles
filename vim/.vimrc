@@ -2,7 +2,6 @@ call plug#begin()
 
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -45,10 +44,7 @@ set termguicolors
 set undofile            "maintain undo history between sessions
 set undodir=~/.vim/undo "persistent undo
 set hls is              "set search highlighting and incremental search
-"set ic                  "set ignore case for search
-
-"set splitbelow          always set new splits below and right"
-"set splitright
+set splitright          "set new split to the right instead of left
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
