@@ -7,12 +7,12 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'fugitive.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'Shougo/denite.nvim'
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
+Plug 'digitaltoad/vim-pug'
 
 call plug#end()
 
@@ -48,7 +48,6 @@ set splitright          "set new split to the right instead of left
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
 
 let g:indentLine_char = '|'
 colorscheme gruvbox
@@ -127,7 +126,7 @@ let g:user_emmet_settings = {
     \},
   \}
 
-"escape with jk
+"escape with jj
 inoremap jj <Esc>
 
 "split management

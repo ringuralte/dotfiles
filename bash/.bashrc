@@ -18,3 +18,6 @@ export INPUTRC=~/.inputrc
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+#nvm
+source /usr/share/nvm/init-nvm.sh
