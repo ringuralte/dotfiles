@@ -15,9 +15,14 @@ alias ls='ls --color=auto'
 
 #allows specific history search using up/down arrow and accompanying command
 export INPUTRC=~/.inputrc
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 #nvm
 source /usr/share/nvm/init-nvm.sh
+
+#fzf stuffs
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi

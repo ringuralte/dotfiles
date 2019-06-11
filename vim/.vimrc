@@ -13,6 +13,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
 Plug 'digitaltoad/vim-pug'
+Plug 'tpope/vim-commentary'
+Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 
 call plug#end()
 
@@ -50,7 +53,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let g:indentLine_char = '|'
-colorscheme gruvbox
+colorscheme molokai
 let g:gruvbox_contrast_dark='hard'
 
 " Switch syntax highlighting on when the terminal has colors or when using the
@@ -86,7 +89,6 @@ if has("autocmd")
   augroup END
 
 endif " has("autocmd")
-
 
 let g:lightline = {
   \   'colorscheme': 'molokai',
@@ -127,7 +129,7 @@ let g:user_emmet_settings = {
   \}
 
 "escape with jj
-inoremap jj <Esc>
+inoremap jk <Esc>
 
 "split management
 nmap <C-H> <C-W><C-H>
