@@ -7,6 +7,7 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/share/powerline/bindings/bash/powerline.sh
+
 #if not running interactively, do not do anything
 [[ $- != *i* ]] && return
 #[[ -z "$TMUX" ]] && exec tmux
@@ -15,6 +16,9 @@ alias ls='ls --color=auto'
 
 #allows specific history search using up/down arrow and accompanying command
 export INPUTRC=~/.inputrc
+
+#bin for ringu
+export PATH=$PATH:~/bin
 
 #nvm
 source /usr/share/nvm/init-nvm.sh

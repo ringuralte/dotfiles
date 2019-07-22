@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/ringu/.emacs.d'
+let g:netrw_dirhist_2='/home/ringu/exercises/docker-nginx-tutorial'
+let g:netrw_dirhist_3='/home/ringu/exercises/docker'
+let g:netrw_dirhist_4='/home/ringu/exercises'
+let g:netrw_dirhist_5='/home/ringu/exercises/docker-tut'
+let g:netrw_dirhist_6='/var/lib/docker/volumes'
+let g:netrw_dirhist_7='/home/ringu/doom-theme-generator/doom-theme-generator'

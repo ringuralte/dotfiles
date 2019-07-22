@@ -1,0 +1,97 @@
+[options]
+allow_bold = true
+#audible_bell = false
+bold_is_bright = true
+#clickable_url = true
+#dynamic_title = true
+#font = SauceCodePro Nerd Font 11
+#font = FuraMono Nerd Font Mono 12
+#font = ShureTechMono Nerd Font 15
+font = Iosevka Nerd Font 14
+#font = Hasklig Nerd Font 14
+#font = TerminessTTF Nerd Font 16
+#font = xos4 Terminus 12
+#font = Hack 13
+#font = Misc Tamsyn 16
+#fullscreen = true
+#icon_name = terminal
+#mouse_autohide = false
+#scroll_on_output = false
+#scroll_on_keystroke = true
+# Length of the scrollback buffer, 0 disabled the scrollback buffer
+# and setting it to a negative value means "infinite scrollback"
+scrollback_lines = 10000
+#search_wrap = true
+#urgent_on_bell = true
+#hyperlinks = false
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+
+# "system", "on" or "off"
+# cursor_blink = off
+
+# "block", "underline" or "ibeam"
+#cursor_shape = block
+
+# Hide links that are no longer valid in url select overlay mode
+#filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+size_hints = true
+
+# "off", "left" or "right"
+#scrollbar = right
+[colors]
+# Base16 Material Darker
+# Author: Nate Peterson
+
+foreground          = #EEFFFF
+foreground_bold     = #EEFFFF
+cursor              = #EEFFFF
+cursor_foreground   = #212121
+background          = rgba(29, 31, 40, 0.8)
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #212121
+color8  = #4A4A4A
+color7  = #EEFFFF
+color15 = #FFFFFF
+
+# Red
+color1  = #f92672
+color9  = #f92672
+
+# Green
+color2  = #C3E88D
+color10 = #C3E88D
+
+# Yellow
+color3  = #FFCB6B
+color11 = #FFCB6B
+
+# Blue
+color4  = #82AAFF
+color12 = #82AAFF
+
+# Purple
+color5  = #C792EA
+color13 = #C792EA
+
+# Teal
+color6  = #89DDFF
+color14 = #89DDFF
+
+# Extra colors
+color16 = #F78C6C
+color17 = #FF5370
+color18 = #303030
+color19 = #353535
+color20 = #B2CCD6
+color21 = #EEFFFF
+

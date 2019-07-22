@@ -1,0 +1,175 @@
+#set the mod key which is win key here
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font FuraMono Nerd Font Mono 10
+
+font pango:FuraMono Nerd Font Mono 10
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec termite
+bindsym $mod+Shift+Return exec urxvt
+
+# kill focused window
+bindsym $mod+Shift+x kill
+
+#start rofi program launcher
+bindsym $mod+d exec "rofi -show run"
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+shift+h move left
+bindsym $mod+shift+j move down
+bindsym $mod+shift+k move up
+bindsym $mod+shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+shift+left move left
+bindsym $mod+shift+down move down
+bindsym $mod+shift+up move up
+bindsym $mod+shift+right move right
+
+# split in horizontal orientation
+bindsym $mod+p split h
+
+# split in vertical orientation
+bindsym $mod+o split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# define names for default workspaces for which we configure key bindings later on.
+# we use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $q "Q"
+set $w "W"
+set $e "E"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+q workspace $q
+bindsym $mod+w workspace $w
+bindsym $mod+e workspace $e
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+shift+1 move container to workspace $ws1
+bindsym $mod+shift+2 move container to workspace $ws2
+bindsym $mod+shift+3 move container to workspace $ws3
+bindsym $mod+shift+4 move container to workspace $ws4
+bindsym $mod+shift+q move container to workspace $q
+bindsym $mod+shift+w move container to workspace $w
+bindsym $mod+shift+e move container to workspace $e
+bindsym $mod+shift+8 move container to workspace $ws8
+bindsym $mod+shift+9 move container to workspace $ws9
+bindsym $mod+shift+0 move container to workspace $ws10
+
+# reload the configuration file
+bindsym $mod+shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+shift+r restart
+# exit i3 (logs you out of your x session)
+bindsym $mod+shift+p exec "i3-nagbar -t warning -m 'you pressed the exit shortcut. do you really want to exit i3? this will end your x session.' -B 'Yes, exit i3' 'i3-msg exit'" 
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # these bindings trigger as soon as you enter the resize mode
+
+        # pressing left will shrink the window’s width.
+        # pressing right will grow the window’s width.
+        # pressing up will shrink the window’s height.
+        # pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym left resize shrink width 10 px or 10 ppt
+        bindsym down resize grow height 10 px or 10 ppt
+        bindsym up resize shrink height 10 px or 10 ppt
+        bindsym right resize grow width 10 px or 10 ppt
+
+        # back to normal: enter or escape or $mod+r
+        bindsym return mode "default"
+        bindsym escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+#start nitrogen for wallpapers
+exec --no-startup-id nitrogen --restore
+
+#start compton composition
+exec --no-startup-id compton
+
+default_border none
+#border normal
+
+gaps outer 2
+gaps inner 2
+
+#client.focused #f92672 #f92672 #ffffff #f92672 #ffffff
+
+#start polybar
+exec_always --no-startup-id polybar Bar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+#enable floating mode for URxvt terminal which is $mod+shift+enter
+#for_window [class="URxvt"] floating enable
+
+set $monitor_one "HDMI-0"
+#bind workspaces for monitor one
+workspace $ws1 output $monitor_one
+workspace $ws2 output $monitor_one
+workspace $ws3 output $monitor_one
+
+set $monitor_two "DVI-D-0"
+#bind workspaces for monitor two
+workspace $q output $monitor_two
+workspace $w output $monitor_two
+workspace $e output $monitor_two

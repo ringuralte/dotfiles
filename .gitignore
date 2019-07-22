@@ -1,3 +1,5 @@
 vim/.vim/plugged/
 tmux/.tmux/plugins/
 vim/.vim/undo/
+nvim/.config/nvim/plugged
+

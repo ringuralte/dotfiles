@@ -1,0 +1,5 @@
+{ 
+  "coc.preferences.formatOnType": true,
+  "typescript.suggest.enabled": false,
+  "python.jediEnabled": false
+}
