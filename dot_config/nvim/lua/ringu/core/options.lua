@@ -21,6 +21,9 @@ opt.clipboard = 'unnamedplus'
 -- enable breakpoint indent
 opt.breakindent = true
 
+-- disable swap file
+opt.swapfile = false
+
 opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or capital in search
