@@ -22,7 +22,7 @@ return {
       log_level = vim.log.levels.DEBUG,
     }
 
-    vim.keymap.set({ 'n', 'v' }, '<C-S-I>', function()
+    vim.keymap.set({ 'n', 'v' }, '<leader>ff', function()
       conform.format {
         lsp_fallback = true,
         async = false,
