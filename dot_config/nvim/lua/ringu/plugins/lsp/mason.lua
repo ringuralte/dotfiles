@@ -22,7 +22,8 @@ return {
 
     mason_lspconfig.setup {
       ensure_installed = {
-        'tsserver',
+        'typos_lsp',
+        -- 'tsserver',
         'html',
         'cssls',
         'tailwindcss',
@@ -31,6 +32,7 @@ return {
         'graphql',
         'emmet_ls',
         'prismals',
+        'astro',
       },
 
       automatic_installation = true, -- not the same as ensure_installed
@@ -40,7 +42,7 @@ return {
       ensure_installed = {
         'prettier',
         'stylua',
-        'eslint',
+        'eslint_d',
       },
     }
   end,

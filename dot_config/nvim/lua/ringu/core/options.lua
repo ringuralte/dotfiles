@@ -35,6 +35,28 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 
+opt.list = true
+-- Set listchars
+-- opt.listchars = 'nbsp:␣,eol:↲,tab:»\\ ,extends:›,precedes:‹,trail:•'
+opt.listchars = {
+  space = '.',  -- Show spaces as ␣
+  tab = '▸ ',   -- Show tabs as ▸ followed by a space
+  trail = '.',  -- Show trailing spaces as •
+  eol = '¬',    -- Show end of line as ¬
+}
+
+
+-- Set showbreak
+opt.showbreak = '↳ '
+
+-- Disable number column in visual mode
+-- vim.cmd([[
+--   augroup my_visuallistchars
+--     autocmd!
+--     autocmd CursorMoved * if mode() =~# "[vV\<C-v>]" | set list | else | set nolist | endif
+--   augroup END
+-- ]], false)
+
 -- opt.updatetime = 250
 -- opt.timeoutlen = 500
 
@@ -45,7 +67,9 @@ opt.termguicolors = true
 
 opt.wrap = false
 
--- highligh on yank feature
+opt.title = true
+
+-- highlight on yank feature
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
@@ -58,6 +82,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.filetype.add({
   extension = {
     postcss = 'css',
-    pcss = 'css'
+    pcss = 'css',
+    astro = 'astro'
   }
 })
