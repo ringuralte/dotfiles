@@ -1,13 +1,18 @@
 return {
-	"dmmulroy/tsc.nvim",
-	config = function()
-		require("tsc").setup({
-			auto_start_watch_mode = false,
-			auto_focus_qflist = false,
-			auto_close_qflist = true,
-			flags = {
-				watch = true,
-			},
-		})
-	end,
+	-- "dmmulroy/tsc.nvim",
+	-- config = function()
+ --    local utils = require("tsc.utils")
+	-- 	require("tsc").setup({
+	-- 		auto_start_watch_mode = true,
+	-- 		auto_close_qflist = false,
+	-- 		use_trouble_qflist = true,
+ --      bin_path = utils.find_tsc_bin(),
+	-- 		flags = {
+	-- 			watch = true,
+ --        project = function()
+ --          return utils.find_nearest_tsconfig()
+ --        end,
+	-- 		},
+	-- 	})
+	-- end,
 }

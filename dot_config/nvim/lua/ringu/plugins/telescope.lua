@@ -21,15 +21,31 @@ return {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 
+		local open_with_trouble = require("trouble.sources.telescope").open
+
+		-- Use this to add more results without clearing the trouble list
+		local add_to_trouble = require("trouble.sources.telescope").add
+
 		telescope.setup({
 			defaults = {
+				file_ignore_patterns = {
+					"node_modules",
+					"gql",
+					"package%-lock.json",
+				},
+				-- borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
 				mappings = {
 					i = {
 						["<C-k>"] = actions.move_selection_previous,
 						["<C-j>"] = actions.move_selection_next,
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						["<C-t>"] = open_with_trouble,
 					},
+					n = { ["<C-t>"] = open_with_trouble },
 				},
+				-- find_files = {
+				-- 	hidden = true,
+				-- },
 			},
 		})
 
@@ -38,33 +54,43 @@ return {
 
 		local keymap = vim.keymap -- for conciseness
 
+		local builtin = require("telescope.builtin")
+
+		keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
+		keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Search [G]it [F]iles" })
 		-- keymap.set(
 		-- 	"n",
-		-- 	"<leader>ee",
-		-- 	"<cmd>Telescope file_browser<CR>",
-		-- 	{ noremap = true, desc = "Toggle file explorer" }
-		-- ) -- toggle file explorer
-		-- keymap.set(
+		-- 	"<leader>sf",
+		-- 	builtin.find_files({ find_command = { "rg", "--files", "--hidden", "-g", "!.git" } }),
+		-- 	{ desc = "[S]earch [F]iles" }
+		-- )
+		vim.api.nvim_set_keymap(
+			"n",
+			"<leader>sf",
+			":lua require('telescope.builtin').find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } })<CR>",
+			{ noremap = true, silent = true }
+		)
+		-- map(
 		-- 	"n",
-		-- 	"<leader>ef",
-		-- 	"<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
-		-- 	{ noremap = true, desc = "Toggle file explorer on current file" }
-		-- ) -- toggle file explorer on current file
-		keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
-		keymap.set("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
-		keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
-		keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
-		keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-		keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
-		keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
-		keymap.set("n", "<leader>gh", require("telescope.builtin").lsp_definitions, { desc = "Display Definition" })
-		keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
-		keymap.set("n", "<leader>/", function()
-			-- You can pass additional configuration to telescope to change theme, layout, etc.
-			require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-				winblend = 10,
-				previewer = false,
-			}))
-		end, { desc = "[/] Fuzzily search in current buffer" })
+		-- 	"<leader>sf",
+		-- 	"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+		-- 	default_opts
+		-- )
+		keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+		keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+		keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+		keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
+		keymap.set("n", "<leader>gh", function()
+			builtin.lsp_definitions({ jump_type = "never" })
+		end, { desc = "Display Definition" })
+		keymap.set("n", "<leader><space>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+		keymap.set(
+			"n",
+			"<leader>/",
+			require("telescope.builtin").current_buffer_fuzzy_find,
+			{ desc = "[/] Fuzzily search in current buffer" }
+		)
+		keymap.set("n", "<leader>gr", builtin.lsp_references, { desc = "Find references" })
+		keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Lsp definitions" })
 	end,
 }

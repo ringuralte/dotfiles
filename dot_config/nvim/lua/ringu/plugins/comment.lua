@@ -1,7 +1,7 @@
 return {
   'numToStr/Comment.nvim',
   dependencies = {
-    'JoosepAlviste/nvim-ts-context-commentstring',
+    'JoosepAlviste/nvim-ts-context-commentstring', -- this handles commenting for jsx/tsx files
   },
   config = function()
     -- import comment plugin safely

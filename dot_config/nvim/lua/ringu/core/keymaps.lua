@@ -17,3 +17,5 @@ keymap.set("n", "[t", function()
 end, { desc = "Previous todo comment" })
 
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open lazygit" })
+
+keymap.set("n", "<leader>b", "<cmd>ToggleBlameLine<CR>", { desc = "Toggle blame line" })

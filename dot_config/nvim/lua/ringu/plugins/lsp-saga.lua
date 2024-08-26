@@ -10,6 +10,9 @@ return {
 				enable = false, -- disables both
 				-- virtual_text = false, -- disables just the one at the end of the line
 			},
+			winbar = {
+				enable = false,
+			},
 		})
 
 		local keymap = vim.keymap
