@@ -5,7 +5,8 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				flavour = "macchiato",
+				flavour = "auto",
+				no_italic = true,
 				-- transparent_background = true,
 				dim_inactive = {
 					transparent_background = true,
@@ -14,7 +15,7 @@ return {
 					percentage = 0.15,
 				},
 			})
-			-- vim.cmd([[colorscheme catppuccin]])
+			vim.cmd([[colorscheme catppuccin]])
 		end,
 	},
 
@@ -56,7 +57,7 @@ return {
 			require("kanagawa").setup({
 				-- transparent = true,
 			})
-			vim.cmd([[colorscheme kanagawa]])
+			-- vim.cmd([[colorscheme kanagawa]])
 		end,
 	},
 
@@ -70,18 +71,23 @@ return {
 	-- 	end,
 	-- },
 
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	name = "rose-pine",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("rose-pine").setup({
-	-- 			variant = "moon",
-	-- 			dark_variant = "moon",
-	-- 		})
-	-- 		-- vim.cmd([[colorscheme rose-pine]])
-	-- 	end,
-	-- },
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		priority = 1000,
+		config = function()
+			require("rose-pine").setup({
+				variant = "auto",
+				dark_variant = "main",
+				dim_inactive_windows = true,
+
+				styles = {
+					italic = false,
+				}
+			})
+			-- vim.cmd([[colorscheme rose-pine]])
+		end,
+	},
 
 	-- {
 	-- 	"folke/tokyonight.nvim",

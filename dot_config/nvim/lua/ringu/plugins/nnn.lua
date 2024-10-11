@@ -1,6 +1,6 @@
 return {
-	"luukvbaal/nnn.nvim",
-	config = function()
-		require("nnn").setup()
-	end,
+	-- "luukvbaal/nnn.nvim",
+	-- config = function()
+	-- 	require("nnn").setup()
+	-- end,
 }

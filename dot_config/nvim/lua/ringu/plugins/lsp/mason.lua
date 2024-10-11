@@ -35,6 +35,7 @@ return {
 				-- "vtsls",
 				-- "tsserver"
 				-- 'codelldb'
+				"phpactor"
 			},
 
 			automatic_installation = true, -- not the same as ensure_installed
