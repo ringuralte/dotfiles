@@ -6,9 +6,9 @@ return {
 	},
 	-- event = "BufEnter",
 	config = function()
-		-- require("codeium").setup({
-		-- 	enable_chat = true,
-		-- })
+		require("codeium").setup({
+			enable_chat = true,
+		})
 		local keymap = vim.keymap
 		keymap.set("i", "<C-g>", function()
 			return vim.fn["codeium#Accept"]()

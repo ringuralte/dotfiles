@@ -47,6 +47,11 @@ return {
 				-- 	hidden = true,
 				-- },
 			},
+			pickers = {
+				find_files = {
+					push_tagstack_on_edit = true,
+				},
+			},
 		})
 
 		telescope.load_extension("fzf")
@@ -90,7 +95,7 @@ return {
 			require("telescope.builtin").current_buffer_fuzzy_find,
 			{ desc = "[/] Fuzzily search in current buffer" }
 		)
-		keymap.set("n", "<leader>gr", builtin.lsp_references, { desc = "Find references" })
+		keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
 		keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Lsp definitions" })
 	end,
 }
